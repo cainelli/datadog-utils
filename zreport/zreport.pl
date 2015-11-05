@@ -5,8 +5,6 @@ use warnings;
 use Net::LDAP;
 use Getopt::Long;
 use Data::Dumper;
-use JSON;
-use REST::Client;
 use WebService::DataDog;
 
 
@@ -113,7 +111,7 @@ for my $edition (keys(%zimbraEditionsFlags))
     type        => 'gauge',  # Optional - gauge|counter. Default=gauge.
     value       => $zData->{edition}{$edition}, # For posting a single data point, time 'now'
     host        => $zcs_hostname,     # Optional - host that produced the metric
-    tags        => ["type:$edition", "service:$config{SERVICE}"],     # Optional - tags associated with the metric
+    tags        => ["type:$edition", "bsp:$config{BSP}", "service:$config{SERVICE}"],     # Optional - tags associated with the metric
   );
 
 }
