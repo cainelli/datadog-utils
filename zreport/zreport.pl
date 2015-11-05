@@ -107,7 +107,7 @@ for my $edition (keys(%zimbraEditionsFlags))
   $zData->{edition}{$edition} = 0 if ( ! $zData->{edition}{$edition});
   $msg .= "$edition: " . $zData->{edition}{$edition} . "\n";
 
-  print "posting metric $edition: " . zData->{edition}{$edition} . "\n";
+  print "posting metric $edition: $zData->{edition}{$edition}\n";
   $metric->emit(
     name        => 'inova.zreport',
     type        => 'gauge',  # Optional - gauge|counter. Default=gauge.
