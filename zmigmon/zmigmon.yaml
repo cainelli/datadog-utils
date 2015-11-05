@@ -1,0 +1,15 @@
+init_config:
+    # default config
+    zimbra_url: https://zadmin.domain.com:7071/service/admin/soap
+    zimbra_user: admin
+    zimbra_pass: xxxxxxx
+
+instances:
+  # if you want to gather information from other zimbra instalation:
+  - domain: domain.com.br
+    zimbra_url: https://zadmin.anotherdomain.com:7071/service/admin/soap
+    zimbra_user: admin@domain.com.br
+    zimbra_pass: zzzzzzz
+
+  # if server url/login/pass not defined get from init_config.
+  - domain: other.com
